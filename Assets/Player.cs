@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int currentLane = 1; // 0: left, 1: middle, 2: right
     public float laneDistance = 3f; // Increased lane distance
     public bool isJumping = false;
-    public float scaleThreshold = 0.5f;
+    
     
 
     private Vector3 targetPosition;
@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     {
         HandleInput();
         MoveToTarget();
-        CheckCollisions();
     }
 
     private void HandleInput()
@@ -78,31 +77,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void CheckCollisions()
-    {
-        foreach (Item item in FindObjectsOfType<Item>())
-        {
-            if (item != null)
-            {
-                // Compare scale directly (x, y, z)
-                Vector3 itemScale = item.transform.localScale;
-                Vector3 playerScale = transform.localScale;
+    
 
-                if (Mathf.Abs(playerScale.x - itemScale.x) < scaleThreshold &&
-                    Mathf.Abs(playerScale.y - itemScale.y) < scaleThreshold &&
-                    Mathf.Abs(playerScale.z - itemScale.z) < scaleThreshold)
-                {
-                    // Check if the player and item are in the same lane
-                    float itemLaneX = Mathf.Round(item.transform.position.x / laneDistance) * laneDistance;
-                    float playerLaneX = transform.position.x;
-
-                    if (Mathf.Abs(playerLaneX - itemLaneX) < 0.1f) // Allow small margin
-                    {
-                        Debug.Log("Collision detected!");
-                        //Destroy(item.gameObject); // Handle collision
-                    }
-                }
-            }
-        }
-    }
 }

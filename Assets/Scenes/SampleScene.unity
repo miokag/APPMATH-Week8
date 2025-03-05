@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &454099125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +161,7 @@ MonoBehaviour:
   maxVertical: 5
   minVertical: 5
   removeAtDistance: -200
+  spawnCount: 0
   moveDown: 5
   minSpawnDelay: 2
   maxSpawnDelay: 4
@@ -218,6 +219,7 @@ MonoBehaviour:
   maxVertical: 5
   minVertical: 5
   removeAtDistance: -200
+  spawnCount: 0
   moveDown: 5
   minSpawnDelay: 2
   maxSpawnDelay: 4
@@ -359,7 +361,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1322855568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +383,7 @@ MonoBehaviour:
   maxVertical: 5
   minVertical: 5
   removeAtDistance: -200
+  spawnCount: 0
   moveDown: 5
   minSpawnDelay: 2
   maxSpawnDelay: 4
@@ -501,7 +504,7 @@ MonoBehaviour:
   jumpForce: 5
   laneSwitchSpeed: 7
   currentLane: 1
-  laneDistance: 5
+  laneDistance: 4
   isJumping: 0
   scaleThreshold: 0.5
 --- !u!70 &1772043614

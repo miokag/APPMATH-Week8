@@ -65,13 +65,31 @@ public class ItemSpawner : MonoBehaviour
         for (int i = items.Count - 1; i >= 0; i--)
         {
             Item item = items[i];
+
+            if (item == null)
+            {
+                items.RemoveAt(i);
+                continue;
+            }
             ItemMover(item);
 
             if (item.itemPosition.z < removeAtDistance)
             {
-                Destroy(item.gameObject);
-                items.RemoveAt(i);
+                RemoveItem(item);
             }
+        }
+    }
+    
+    private void RemoveItem(Item item)
+    {
+        if (items.Contains(item))
+        {
+            items.Remove(item);
+        }
+        
+        if (item != null)
+        {
+            Destroy(item.gameObject);
         }
     }
 

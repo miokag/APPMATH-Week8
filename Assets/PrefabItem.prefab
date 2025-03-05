@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPosition: {x: 0, y: 0, z: 0}
+  scaleThreshold: 0.3
+  laneDistance: 4
 --- !u!70 &-4559734113228829616
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
