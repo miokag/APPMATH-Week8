@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     public int currentLane = 1; // 0: left, 1: middle, 2: right
     public float laneDistance = 3f; // Increased lane distance
     public bool isJumping = false;
-    public float scaleThreshhold = 0.5f;
+    public float scaleThreshold = 0.5f;
+    
 
     private Vector3 targetPosition;
 
@@ -79,27 +80,29 @@ public class Player : MonoBehaviour
 
     private void CheckCollisions()
     {
-        foreach (Item item in FindObjectOfType<ItemSpawner>().items)
+        foreach (Item item in FindObjectsOfType<Item>())
         {
-            // Get item's scale using the same perspective formula
-            float itemScale = CameraComponent.focalLength / (CameraComponent.focalLength + item.itemPosition.z);
-            float playerScale = transform.localScale.x; // Assuming uniform scaling
-
-            // Check if the player's scale is close to the item's scale
-            if (Mathf.Abs(playerScale - itemScale) < scaleThreshhold)
+            if (item != null)
             {
-                // Check if the player and item are in the same lane
-                float itemLaneX = Mathf.Round(item.itemPosition.x / laneDistance) * laneDistance;
-                float playerLaneX = transform.position.x;
+                // Compare scale directly (x, y, z)
+                Vector3 itemScale = item.transform.localScale;
+                Vector3 playerScale = transform.localScale;
 
-                if (Mathf.Abs(playerLaneX - itemLaneX) < 0.1f) // Allow small margin
+                if (Mathf.Abs(playerScale.x - itemScale.x) < scaleThreshold &&
+                    Mathf.Abs(playerScale.y - itemScale.y) < scaleThreshold &&
+                    Mathf.Abs(playerScale.z - itemScale.z) < scaleThreshold)
                 {
-                    Debug.Log("Collision detected!");
-                    // Handle collision (e.g., destroy item, trigger event)
-                    Destroy(item.gameObject);
+                    // Check if the player and item are in the same lane
+                    float itemLaneX = Mathf.Round(item.transform.position.x / laneDistance) * laneDistance;
+                    float playerLaneX = transform.position.x;
+
+                    if (Mathf.Abs(playerLaneX - itemLaneX) < 0.1f) // Allow small margin
+                    {
+                        Debug.Log("Collision detected!");
+                        //Destroy(item.gameObject); // Handle collision
+                    }
                 }
             }
         }
     }
-
 }

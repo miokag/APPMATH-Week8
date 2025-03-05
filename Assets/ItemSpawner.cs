@@ -14,6 +14,7 @@ public class ItemSpawner : MonoBehaviour
     public float maxVertical;
     public float minVertical;
     public float removeAtDistance;
+    public int spawnCount;
 
     public float moveDown;
 
@@ -40,6 +41,8 @@ public class ItemSpawner : MonoBehaviour
 
     private void BeginSpawn()
     {
+        spawnCount++;
+        Debug.Log("Spawning: " + spawnCount);
         var spawnedItem = Instantiate(itemToSpawn, parent);
         spawnedItem.itemPosition = GetRandomLocation();
         items.Add(spawnedItem);
