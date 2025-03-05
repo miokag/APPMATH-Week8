@@ -136,7 +136,7 @@ GameObject:
   m_Layer: 0
   m_Name: LaneThree
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -158,12 +158,13 @@ MonoBehaviour:
   parent: {fileID: 454099126}
   maxHorizontal: 3
   minHorizontal: 3
-  maxVertical: 0
-  minVertical: 0
+  maxVertical: 5
+  minVertical: 5
   removeAtDistance: -200
+  moveDown: 5
   minSpawnDelay: 2
   maxSpawnDelay: 4
-  initialDelay: 1.5
+  initialDelay: 1
 --- !u!4 &454099126
 Transform:
   m_ObjectHideFlags: 0
@@ -192,7 +193,7 @@ GameObject:
   m_Layer: 0
   m_Name: LaneTwo
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -214,12 +215,13 @@ MonoBehaviour:
   parent: {fileID: 482953733}
   maxHorizontal: 0
   minHorizontal: 0
-  maxVertical: 0
-  minVertical: 0
+  maxVertical: 5
+  minVertical: 5
   removeAtDistance: -200
+  moveDown: 5
   minSpawnDelay: 2
   maxSpawnDelay: 4
-  initialDelay: 2
+  initialDelay: 1
 --- !u!4 &482953733
 Transform:
   m_ObjectHideFlags: 0
@@ -354,7 +356,7 @@ GameObject:
   m_Layer: 0
   m_Name: LaneOne
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -376,12 +378,13 @@ MonoBehaviour:
   parent: {fileID: 1322855569}
   maxHorizontal: -3
   minHorizontal: -3
-  maxVertical: 0
-  minVertical: 0
+  maxVertical: 5
+  minVertical: 5
   removeAtDistance: -200
+  moveDown: 5
   minSpawnDelay: 2
   maxSpawnDelay: 4
-  initialDelay: 0
+  initialDelay: 1
 --- !u!4 &1322855569
 Transform:
   m_ObjectHideFlags: 0
@@ -477,8 +480,8 @@ Transform:
   m_GameObject: {fileID: 1772043609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.2, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: -2.15, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -496,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 5
-  laneSwitchSpeed: 5
+  laneSwitchSpeed: 7
   currentLane: 1
   laneDistance: 5
   isJumping: 0
@@ -529,7 +532,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -540,7 +543,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1772043612}
   - {fileID: 1322855569}
   - {fileID: 482953733}
   - {fileID: 454099126}
-  - {fileID: 1772043612}

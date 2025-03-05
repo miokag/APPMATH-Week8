@@ -15,6 +15,8 @@ public class ItemSpawner : MonoBehaviour
     public float minVertical;
     public float removeAtDistance;
 
+    public float moveDown;
+
     [Header("Spawning Settings")]
     public float minSpawnDelay = 0.1f; // Minimum spawn delay
     public float maxSpawnDelay = 0.5f; // Maximum spawn delay
@@ -73,15 +75,7 @@ public class ItemSpawner : MonoBehaviour
     private void ItemMover(Item item)
     {
         item.itemPosition.z -= speed;
+        item.itemPosition.y -= moveDown * Time.deltaTime;
     }
-
-    // Method to update the spawn delay range dynamically
-    public void SetSpawnDelayRange(float newMinDelay, float newMaxDelay)
-    {
-        if (newMinDelay > 0 && newMaxDelay > newMinDelay)
-        {
-            minSpawnDelay = newMinDelay;
-            maxSpawnDelay = newMaxDelay;
-        }
-    }
+    
 }
